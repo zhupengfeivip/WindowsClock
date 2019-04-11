@@ -92,6 +92,7 @@ namespace WindowsClock
             int x = Convert.ToInt32(cfa.AppSettings.Settings["LastLocationX"].Value);
             int y = Convert.ToInt32(cfa.AppSettings.Settings["LastLocationY"].Value);
             this.Location = new Point(x, y);
+            this.lblTitle.Text = cfa.AppSettings.Settings["Title"].Value;
         }
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
