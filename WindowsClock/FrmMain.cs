@@ -73,9 +73,10 @@ namespace WindowsClock
             int timeZoneIndex = Convert.ToInt32(cfa.AppSettings.Settings["timeZoneIndex"].Value);
             //列举所有支持的时区列表
             var list = TimeZoneInfo.GetSystemTimeZones();
+            //转换为目标时区时间
             DateTime dt4 = TimeZoneInfo.ConvertTimeFromUtc(dt, TimeZoneInfo.FindSystemTimeZoneById(list[timeZoneIndex].Id));
-            string[] Day = new string[] { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
-            string week = Day[Convert.ToInt32(DateTime.Now.DayOfWeek.ToString("d"))].ToString();
+            string[] day = new string[] { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
+            string week = day[Convert.ToInt32(dt4.DayOfWeek.ToString("d"))].ToString();
             lblDay.Text = dt4.ToString("yyyy-MM-dd") + " " + week;
             lblTime.Text = dt4.ToString("HH:mm");
         }

@@ -33,6 +33,7 @@ namespace WindowsClock
             cbxTimeZone.SelectedIndex = timeZoneIndex;
 
             cbxRunWithSystem.Checked = Convert.ToBoolean(cfa.AppSettings.Settings["RunWithSystem"].Value);
+            txtTitle.Text = cfa.AppSettings.Settings["Title"].Value;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace WindowsClock
             Configuration cfa = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             cfa.AppSettings.Settings["timeZoneIndex"].Value = cbxTimeZone.SelectedIndex.ToString();
             cfa.AppSettings.Settings["RunWithSystem"].Value = cbxRunWithSystem.Checked.ToString();
+            cfa.AppSettings.Settings["Title"].Value = txtTitle.Text;
             cfa.Save();
 
             if (cbxRunWithSystem.Checked)

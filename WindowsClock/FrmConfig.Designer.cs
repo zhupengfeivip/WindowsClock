@@ -32,6 +32,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxRunWithSystem = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cbxTimeZone
@@ -72,11 +74,29 @@
             this.cbxRunWithSystem.Text = "开机自动启动";
             this.cbxRunWithSystem.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(35, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "标题：";
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(82, 76);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(252, 21);
+            this.txtTitle.TabIndex = 5;
+            // 
             // FrmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 179);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cbxRunWithSystem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
@@ -95,5 +115,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbxRunWithSystem;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtTitle;
     }
 }
