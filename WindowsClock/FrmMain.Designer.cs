@@ -36,6 +36,7 @@
             this.tsmiConfig = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClose = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +98,10 @@
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "(加拿大时间)";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -113,6 +118,7 @@
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.LocationChanged += new System.EventHandler(this.FrmMain_LocationChanged);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseUp);
@@ -131,6 +137,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiConfig;
         private System.Windows.Forms.ToolStripMenuItem tsmiClose;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
